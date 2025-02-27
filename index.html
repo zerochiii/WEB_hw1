@@ -1,16 +1,85 @@
 <!DOCTYPE html>
-
-<html lang="en">
+<html lang="zh-Hant"> <!-- 設定網頁語言為繁體中文 -->
 <head>
-    <title>POPCAT CLASSIC</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- 設定網頁寬度與縮放 -->
+    <title>CatGPT</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #343541;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            color: #333;
+        }
+        .container {
+            padding: 20px;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+        }
+        h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: 16px;
+            color: #666;
+        }
+        .retry-button {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #343541;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .retry-button:hover { <!-- 滑鼠移至按鈕上時 -->
+            background-color: #343541;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const messages = [
+                "伺服器的喵能量不足，正在充電！ 🔋🐱",
+                "貓咪說今天不上班，請稍後再試！ 😼🚧",
+                "Oops！小貓玩得太瘋，把網頁弄壞了！ 🤦‍♂️🐾",
+                "我們的貓開發者正在修復問題，請耐心等候！ 💻🐾",
+                "喵！你的請求被貓貓偷偷藏起來了！ 🐱🎁",
+                "這不是你的問題，是貓咪的！ 🐈💥",
+                "我們的貓管家正在整理線路，馬上回來！ 🛠️🐈",
+                "喵嗚！小貓不小心把伺服器踢倒了，正在努力扶正喔！ 🐾💻😿",
+                "糟糕！小貓跳上鍵盤，結果網站當機了……我們正在修復！ 🐱⌨️🚨",
+                "喵～小貓太好奇，咬了一口網線，現在工程師正在接回去！ 🐈‍⬛🔌🔧",
+                "喵的！伺服器變成貓抓板了，別擔心，我們正在修復中！ 🐾🖥️💥",
+                "喔不！小貓鑽進機房，把電源線當玩具……我們馬上讓網站恢復！ 🐈⚡🔋",
+                "不，是小貓趴在伺服器上睡著了……輕輕等一下喔！ 💤🐾💻",
+                "喵喵！其實是小貓偷偷關了開關，已派工程師哄回來！ 😼🔘🔄",
+                "抱歉，小貓踩到了『暫停』按鈕，我們馬上恢復運行！ 🐾⏸️🔄",
+                "喵～網站被小貓叼走了，正在追回來的路上！ 🏃🐱💨",
+                "喵嗚，原來是小貓覺得這個錯誤頁面很可愛，所以決定多停留一會兒～🥹🐈🎨",
+                "哇嗚～網頁被貓爪刪除了，我們正在復原！ 🐾❌",
+                "啊！此網頁目前被貓主子佔領，請稍後再試！ 🏰🐈",
+            ];
+
+            const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+            document.getElementById("error-message").innerText = randomMessage; <!-- 顯示隨機錯誤訊息 -->
+        });
+    </script>
 </head>
-
 <body>
-<img class="title" src="imgs/popcat.svg" alt="POPCAT">
-<p>123456789</p>
-<img src="https://cdn.cybassets.com/s/files/18929/ckeditor/pictures/content_ec656047-eb32-41cf-93cb-9acfb3d29072.jpg" />
-
-
-<div class="cat-img" id="p"></div>
+<div class="container">
+    <h1><strong>meow ⋯ 網站消失了？</strong></h1>
+    <p id="error-message"></p>
+    <a href="/" class="retry-button">再試一次</a> <!-- 重新整理網頁 -->
+</div>
 </body>
 </html>
