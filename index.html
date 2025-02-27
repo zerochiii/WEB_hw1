@@ -15,12 +15,23 @@
             text-align: center;
             color: #333;
         }
+        .wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
         .container {
             padding: 20px;
             background: #fff;
             border-radius: 12px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
             max-width: 400px;
+        }
+        img {
+            margin-top: 20px;
+            margin-bottom: 20px;
+            border-radius: 6px;
         }
         h1 {
             font-size: 24px;
@@ -75,12 +86,19 @@
         });
     </script>
 </head>
+<link rel="stylesheet" href="loading.css"> <!-- 引入CSS檔案(loading 動畫) -->
 <body>
-<div class="container">
+<div class="wrapper">
+    <!--img src="GIF/cat.gif" alt="可愛的貓咪 GIF" width="300"-->
+    <div class="loading-container">
+        <div class="loading-ring"></div>
+        <div class="loading-text">Loading</div>
+    </div>
+    <div class="container">
     <h1><strong>meow ⋯ 網站消失了？</strong></h1>
-    <img src="GIF/cat.gif" alt="可愛的貓咪 GIF" width="300">
     <p id="error-message"></p>
     <a href="https://catgpt.wvd.io/" class="retry-button">再試一次</a> <!-- 按下BUTTON重新導向至指定網頁 -->
+    </div>
 </div>
 </body>
 </html>
