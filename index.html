@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="zh-Hant"> <!-- 設定網頁語言為繁體中文 -->
+<html lang="zh-Hant">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- 設定網頁寬度與縮放 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CatGPT</title>
     <style>
         body {
@@ -53,7 +53,7 @@
             cursor: pointer;
             text-decoration: none;
         }
-        .retry-button:hover { <!-- 滑鼠移至按鈕上時 -->
+        .retry-button:hover {
             background-color: #343541;
         }
     </style>
@@ -82,15 +82,39 @@
             ];
 
             const randomMessage = messages[Math.floor(Math.random() * messages.length)];
-            document.getElementById("error-message").innerText = randomMessage; <!-- 顯示隨機錯誤訊息 -->
+            document.getElementById("error-message").innerText = randomMessage;
+
+            document.querySelector(".retry-button").addEventListener("click", function(event) { //首次載入時，點擊 再試一次 按鈕會觸發事件
+                event.preventDefault();
+                document.body.innerHTML = '';
+                document.body.style.backgroundColor = '#343541'; //固定背景顏色
+                const link = document.createElement('link');
+                link.rel = 'stylesheet';
+                link.href = 'sleeping.css'; //導入 CSS 動畫 (小貓睡覺)
+                document.head.appendChild(link);
+
+                const container = document.createElement('div');
+                container.className = 'container';
+                container.innerHTML = `
+                    <div class="shadow"></div>
+                    <div class="cat">
+                        <div class="ear"></div>
+                        <div class="eye"></div>
+                        <div class="mouth"></div>
+                        <div class="nose"></div>
+                        <div class="tail"></div>
+                        <div class="body"></div>
+                        <div class="bubble"></div>
+                `;
+                document.body.appendChild(container);
+            });
         });
     </script>
 </head>
-<link rel="stylesheet" href="loading.css"> <!-- 引入CSS檔案(loading 動畫) -->
+<link rel="stylesheet" href="loading.css">
 <body>
 <div class="wrapper">
     <video src="video/loading.mp4" autoplay loop muted width="200" style="margin-bottom: 20px; border-radius: 15px;"></video>
-    <!--img src="GIF/cat.gif" alt="可愛的貓咪 GIF" width="300"-->
     <div class="loading-container">
         <div class="loading-ring"></div>
         <div class="loading-text">Loading</div>
@@ -98,7 +122,7 @@
     <div class="container">
         <h1><strong>meow ⋯ 網站消失了？</strong></h1>
         <p id="error-message"></p>
-        <a href="https://catgpt.wvd.io/" class="retry-button">再試一次</a> <!-- 按下BUTTON重新導向至指定網頁 -->
+        <a href="#" class="retry-button">再試一次</a>
     </div>
 </div>
 </body>
