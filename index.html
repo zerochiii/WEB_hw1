@@ -56,6 +56,22 @@
         .retry-button:hover {
             background-color: #343541;
         }
+        .count-button {
+            display: block;
+            margin: 100px auto;
+            padding: 20px 10px;
+            font-size: 16px;
+            color: white;
+            background-color: #4a4a5a;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            text-decoration: none;
+            box-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
+        }
+        .count-button:hover {
+            background-color: #fad43f;
+        }
     </style>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
@@ -105,8 +121,25 @@
                         <div class="tail"></div>
                         <div class="body"></div>
                         <div class="bubble"></div>
+                    <p class="wake-up-message"><strong>請叫醒沉睡的喵師傅！讓牠起來修理調皮的小貓！</strong></p>
+                    <button class="count-button">叫醒牠</button>
                 `;
                 document.body.appendChild(container);
+
+                let clickCount = 0;
+                document.querySelector(".count-button").addEventListener("click", function() { //點擊次數計數
+                    clickCount++;
+                    if (clickCount >= 10) {
+
+                        document.querySelector(".wake-up-message").innerHTML = "<strong>喵師傅要醒拉！</strong>";
+                            document.querySelector(".cat").classList.add("awake");
+                            document.querySelector(".count-button").remove();
+                        setTimeout(() => {
+                            window.location.href = 'https://catgpt.wvd.io/';
+                        }, 1500);
+                    }
+                });
+
             });
         });
     </script>

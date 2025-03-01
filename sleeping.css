@@ -46,6 +46,7 @@ body {
     top: 18px;
     left: 15px;
 }
+
 .eye:before {
     content: "";
     left: 30px;
@@ -145,6 +146,20 @@ body {
     50% {
         transform: scale(1.6);
     }
+}
+.wake-up-message {
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    transform: translate(-75%, -350%);
+    color: white;
+    font-size: 1.2rem;
+    font-family: 'Arial', sans-serif;
+    background-color: #000000;
+    padding: 10px;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        white-space:nowrap;
 }
 .shadow {
     height: 10px;
