@@ -93,7 +93,7 @@ document.addEventListener("DOMContentLoaded", function () {
         let clickCount = 0;
         document.querySelector(".cat").addEventListener("click", function () {
             clickCount++;
-            if (clickCount >= 10) {
+            if (clickCount >= 15) {
                 document.querySelector(".wake-up-message").innerHTML = "<strong>喵師傅要醒拉！</strong>";
                 document.querySelector(".cat").classList.add("awake");
                 /*document.querySelector(".count-button").remove();*/
