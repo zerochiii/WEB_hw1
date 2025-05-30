@@ -178,5 +178,5 @@ body {
     }
 }
 .count-button {
-    margin-top: 150px; /* 增加按鈕與其他元素的間距 */
+    display: none;
 }
